@@ -1,0 +1,5 @@
+These line may be useful in future
+
+to pass data to editor
+const convertedState = convertFromRaw(JSON.parse(value))
+const editorValue = EditorState.createWithContent(convertedState.getCurrentContent());
