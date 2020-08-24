@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch, useHistory } from "react-router-dom";
 
 // Get required components
 import { AddBlog, BlogLists, Home, SelectedBlog, ErrorBoundary, Login, ProtectedRoute } from './components';
@@ -9,10 +9,10 @@ import { auth } from './firebase/firebase';
 import { onAuthStateChange, handleLogoutWithFirebase } from './store/slices/auth/authSplice';
 import { useDispatch } from "react-redux";
 
-function App() {
+function App(props) {
 
   const dispatch = useDispatch();
-  const [user,setUser] = useState(null)
+  const [user,setUser] = useState(null);
 
   auth.onAuthStateChanged(authUser => {
     if(authUser) {
@@ -57,7 +57,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/blogs"  component={BlogLists} />
           <ProtectedRoute path="/add-blog" component={AddBlog} />
-          <ProtectedRoute path="/blog/:category" component={SelectedBlog} />
+          <Route path="/blog/:category" component={SelectedBlog} />
           <Route path="/login" component={Login} />
         </Switch>
       </Router>

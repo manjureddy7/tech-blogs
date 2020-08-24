@@ -7,6 +7,8 @@ const SelectedBlog  = (props) => {
     const postsFromStore = useSelector(state => state.blogs.posts);
     const { id } = props.match.params;
 
+    console.log("props is",props)
+
     const renderPage = () => {
 
         if(!postsFromStore.length) {

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Blog = (props) => {
     const { post } = props;
-    console.log("post is", post)
     return(
         <div key={post.id}>
             <Link to={`/blog/${post.category}`}>
