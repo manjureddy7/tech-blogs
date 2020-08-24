@@ -58,13 +58,14 @@ export const getPostsFromFirestore = () => (dispatch) => {
     })
 }
 
-export const addPostToFirestore = (title,body) => (dispatch) => {
+export const addPostToFirestore = (title,category,body) => (dispatch) => {
     const id = uuid();
     dispatch(setLoading({loading: true}));
     db.collection("blogs").doc(id).set({
         title,
         body,
-        id
+        id,
+        category
     })
     .then(() => {
         dispatch(getPostsFromFirestore());

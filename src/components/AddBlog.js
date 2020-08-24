@@ -24,6 +24,7 @@ const AddBlog  = () => {
 
     //Blog Title state
     const [title, setTitle] = useState('');
+    const [category, setCategory] = useState('');
 
     // Store related
     const dispatch = useDispatch();
@@ -34,6 +35,11 @@ const AddBlog  = () => {
         setTitle(value);
     }
 
+    const handleCategoryChange = (e) => {
+        const { target : {value}} = e;
+        setCategory(value);
+    }
+
     // Add Blog
     const addBlog = () => {
         // convert immutable data to raw js obj
@@ -41,7 +47,7 @@ const AddBlog  = () => {
         // stringfiy it
         const body = JSON.stringify(convertedStateToRaw);
         if(!title || !body) return;
-        dispatch(addPostToFirestore(title,body));
+        dispatch(addPostToFirestore(title,category,body));
         setTitle('');
         setEditorState(EditorState.createEmpty());
     }
@@ -59,8 +65,6 @@ const AddBlog  = () => {
         }
         return 'not-handled'
     }
-
-    
 
     // **Handle button clicks
     const onHandleBoldClick = () => {
@@ -126,6 +130,7 @@ const AddBlog  = () => {
             </div>
 
             <input className="title-input" type="text" onChange={handleTitleChange} placeholder="Enter your Blog Title..." name="title" value={title} />
+            <input className="title-input" type="text" onChange={handleCategoryChange} placeholder="Specify category.." name="category" value={category} />
             <div className="editor">
                 <Editor 
                     editorState={editorState}

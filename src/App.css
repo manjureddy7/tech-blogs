@@ -164,7 +164,7 @@ button:hover {
 
 .all-blogs {
   background-color: white;
-  box-shadow: 5px 10px #d87a1c;
+  /* box-shadow: 5px 10px #d87a1c; */
   padding: 10px;
   margin: 10px;
 }
@@ -188,4 +188,49 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.signout-btn {
+  width: 100px;
+  background-color: #16d9e3;
+}
+
+.signout-btn:hover {
+ color: white;
+ background-color: red;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.email-section label{
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  margin-right: 37px;
+}
+
+.login-form input{
+  padding: 10px;
+}
+
+.password-section label {
+  display: inline-block;
+  height: 50px;
+  width: 78px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.login-btn {
+  width: 70px;
+  background-color: #f57c00;
+  margin-top: 20px;
+  color: black;
 }
