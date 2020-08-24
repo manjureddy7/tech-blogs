@@ -5,6 +5,7 @@ import Login from './Login';
 import Home from './Home';
 import ErrorBoundary from './ErrorBoundary';
 import ProtectedRoute from './ProtectedRoute';
+import BlogCategory from './BlogCategory'
 
 export {
     AddBlog,
@@ -13,5 +14,6 @@ export {
     Login,
     Home,
     ErrorBoundary,
-    ProtectedRoute
+    ProtectedRoute,
+    BlogCategory
 }

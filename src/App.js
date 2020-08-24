@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 // Get required components
-import { AddBlog, BlogLists, Home, SelectedBlog, ErrorBoundary, Login, ProtectedRoute } from './components';
+import { AddBlog, BlogLists, Home, SelectedBlog, ErrorBoundary, Login, ProtectedRoute, BlogCategory } from './components';
 
 import { auth } from './firebase/firebase';
 import { onAuthStateChange, handleLogoutWithFirebase } from './store/slices/auth/authSplice';
@@ -57,7 +57,8 @@ function App(props) {
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/blogs"  component={BlogLists} />
           <ProtectedRoute path="/add-blog" component={AddBlog} />
-          <Route path="/blog/:category" component={SelectedBlog} />
+          <ProtectedRoute path="/blog/posts/:id" component={SelectedBlog} />
+          <ProtectedRoute path="/blog/category/:category" component={BlogCategory} />
           <Route path="/login" component={Login} />
         </Switch>
       </Router>

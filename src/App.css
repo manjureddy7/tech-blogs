@@ -234,3 +234,28 @@ button:hover {
   margin-top: 20px;
   color: black;
 }
+
+.category-card {
+  height: 100px;
+  width: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #18939a;
+  margin-right: 10px;
+}
+
+.category-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.blog-title {
+  padding: 10px;
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 10px;
+  background-color: #16d9e3;
+}
