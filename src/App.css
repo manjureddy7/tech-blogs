@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Baloo Tamma 2', cursive;
+  background-color: darkseagreen;
 }
 
 .editor {
@@ -158,8 +159,11 @@ button:hover {
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
   border-radius: 20px;
+  box-shadow: 4px 5px #092946;
+  /* background-color: #05b7ec; */
+  background-image: linear-gradient(to right, rgba(156,96, 7, 0),rgba(156, 96, 7, 1));
 }
 
 .all-blogs {
@@ -188,6 +192,11 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 90vh;
+  /* background-color: #f5e137; */
+  background-image: linear-gradient(to right, rgba(232, 176, 6, 0),rgba(232, 176, 6, 1));
+  border-radius: 10px;
+  box-shadow: inset 10px 1px 7px 0px #348031;
 }
 
 .signout-btn {
@@ -258,4 +267,9 @@ button:hover {
   margin-left: 10%;
   margin-top: 10px;
   background-color: #16d9e3;
+}
+
+a:link, a:visited {
+  color: black;
+  font-size: 24px;
 }

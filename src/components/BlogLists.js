@@ -14,7 +14,7 @@ const BlogList  = () => {
     // Load all the posts for the first time
     useEffect(()=> {
         dispatch(getPostsFromFirestore())
-    }, []);
+    }, [dispatch]);
 
     return(
         <div className="all-blogs">

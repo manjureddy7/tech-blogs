@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const BlogCategory = (props) => {
 
-    const { posts, loading } = useSelector(state =>  state.blogs);
+    const { posts } = useSelector(state =>  state.blogs);
     const { category } = props.match.params;
     const postsList = posts.filter(post => post.category === category)
     return(
